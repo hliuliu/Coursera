@@ -1,0 +1,20 @@
+
+\documentclass[12pt]{article}
+\usepackage{amsmath,amsthm}
+
+\newcommand{\limtoinf}{\lim_{n\to\infty}}
+
+
+\begin{document}
+
+First note that the LHS can be rewritten as 
+$$\sum_{k=0}^n {n\choose k}{n\choose n-k}.$$
+
+Suppose $2n$ people, $n$ boys, and $n$ girls apply to a certain depertment in a university. All the applicants are equally qualified, but there are enough positions for only $n$ students. Clearly, there are ${2n\choose n}$ ways to select $n$ students for admittance. The number of boys chosen, $k$, can be any integer between 0 and $n$ inclusive. For each such $k$. We can choose $k$ boys, and $n-k$ girls for admittance. The boys can be chosen is ${n\choose k}$ ways, and girls, ${n\choose n-k}$ ways. Hence, the LHS counts seperate cases based on the number of boys to admit, then sums over all these mutually exclusive and exhaustive cases. This completes the proof. \qed
+
+
+\end{document}
+
+
+
+

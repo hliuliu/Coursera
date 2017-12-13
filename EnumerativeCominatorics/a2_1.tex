@@ -1,0 +1,17 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,amsthm,amssymb}
+\newcommand{\qbinom}{\genfrac{[}{]}{0pt}{}}
+
+
+\begin{document}
+
+We first show that the number of self-conjugate partitions of $n$ is equal to the number of partitions of $n$ into distinct odd summands. Given a Young diagram, denote $(i,j)$ as the square at the $i$-th row and $j$-th column. The square at the NW corner is $(1,1)$.
+
+Let $n= \lambda_1+\lambda_2+\hdots+\lambda_k$, with $\lambda_1\ge\lambda_2\ge\hdots\ge\lambda_k\ge1$, be self-conjugate. Let $Y$ be the set of squares forming the diagram. Then $$Y=\{(i,j):1\le i\le k, 1\le j\le \lambda_i\}.$$ Note that $(i,j)\in Y \iff (j,i)\in Y$. For each positive integer $m$, define $Y_m=\{(i,j)\in Y: m= \min\{i,j\}\}$. Then $Y_m\neq\emptyset\iff (m,m)\in Y_m$, in which case $|Y_m|$ is odd. Also, 
+$$|Y_1|>|Y_2|>\hdots>|Y_r|>|Y_{r+1}|=|Y_{r+2}|=\hdots$$ where $r$ is chosen so that $|Y_r|>0$ and $Y_m=\emptyset$ for $m>r$. We see that $\cup_{i=1}^n Y_i = Y$ and $Y_i\cap Y_j=\emptyset$ if $i\neq j$. Since $n=|Y|$, we have that $n= |Y_1|+|Y_2|+\hdots+|Y_r|$ is a partition with distinct odd summands. This process is reversible. Given $n=x_1+x_2+\hdots+x_r$ with $x_1>x_2>\hdots>x_r\ge 1$ and each $x_i$ odd, we construct a symmetric diagram, $Y$. For each $1\le i\le r$, and $i\le j< i+{x_i+1\over 2}$, we add $(i,j)$ and $(j,i)$ to $Y$. \qed
+
+The required generating function is $$G(q)=(1+q)(1+q^3)(1+q^5)\hdots=\prod_{i=1}^\infty (1+q^{2i-1})=\prod_{i=1}^\infty {1-q^{4i-2}\over 1-q^{2i-1}}.$$ 
+
+\end{document}
+

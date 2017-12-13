@@ -1,0 +1,15 @@
+
+
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,amsthm,amssymb}
+\newcommand{\qbinom}{\genfrac{[}{]}{0pt}{}}
+
+\begin{document}
+
+Note that $\{a_n\},\{b_n\}$ are linear recurences. Thus, there are integers $k,l>0$, polynomials $p_1(n),p_2(n),\hdots,p_k(n),r_1(n),r_2(n),\hdots, r_l(n)$, and complex numbers $\kappa_1,\kappa_2,\hdots,\kappa_k,\lambda_1,\lambda_2,\hdots,\lambda_l$ such that $a_n=\sum_{i=1}^k \kappa_i^np_i(n)$ and $b_n=\sum_{i=1}^l \lambda_i^n r_i(n)$ for each $n\ge0$. Now we have 
+$$a_nb_n=\sum_{i=1}^k \sum_{j=1}^l \left(\kappa_i\lambda_j\right)^n \sigma_{ij}(n),$$
+where $\sigma_{ij}(n)=p_i(n)r_j(n)$ is a polynomial. Thus, $\{a_nb_n\}$ is a linear recurence and $C(q)$ is rational. \qed
+
+\end{document}
+

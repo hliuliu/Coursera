@@ -1,0 +1,33 @@
+
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,amsthm,amssymb}
+\newcommand{\qbinom}{\genfrac{[}{]}{0pt}{}}
+
+
+\begin{document}
+
+Consider a term in the expansion of $(x+y)^n$ of the form $t_1t_2\hdots t_n$ where $t_i\in \{x,y\}$ for each
+$1\le i\le n$. Let $k=|\{1\le i\le n: t_i=x\}|$. 
+Then $t_1t_2\hdots t_n=q^m x^k y^{n-k}$, where 
+
+$$m=\sum_{\substack{1\le i\le n,\\ t_i=x}}
+\sum_{\substack{1\le j<i,\\ t_j=y}} 1.$$
+
+We construct a Young diagram fitting in a $k\times (n-k)$ rectangle as follows:
+
+Define indices $n\ge i_1 > i_2 > \hdots > i_k\ge1$, where $x=t_{i_1}=t_{i_2}=\hdots=t_{i_k}$.
+Note that for each $i_j$, the number of $y$'s occurring before position $i_j$ is $i_j-1-(k-j)=i_j+j-k-1$. This quantity non-strictly decreases as $j$ increases. Let the $j$-th row  of our Young diagram consist of $i_j+j-k-1$ columns, so the entire diagram has $m$ grids.
+
+We now have a bijection between the terms in $(x+y)^n$ equal to $q^mx^ky^{n-k}$ and the Young diagrams of size $m$ fitting in $k\times(n-k)$ rectangle. The number  of such diagrams is the coefficient of $q^m$ in $\qbinom{n}{k}_q$. \qed
+
+\end{document}
+
+
+
+
+
+
+
+
+

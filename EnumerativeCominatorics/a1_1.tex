@@ -1,0 +1,21 @@
+
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+
+\newcommand{\limtoinf}{\lim_{n\to\infty}}
+
+
+\begin{document}
+
+\begin {align*}
+\limtoinf {c_{n+1}\over c_n} &= {{1\over n+2}{2n+2\choose n+1}\over {1\over n+1}{2n\choose n}}\\
+&=\limtoinf {n+1\over n+2} {{{(2n+2)!\over (n+1)!^2}\over{(2n)!\over n!^2}}}\\
+&= \limtoinf {n+1\over n+2} {(2n+2)!\over (2n)!}{n!^2\over (n+1)!^2}\\
+&= \limtoinf (2n+1)(2n+2) {n+1\over (n+2)(n+1)^2}\\
+&= \limtoinf {(2n+1)(2n+2)\over (n+1)(n+2)}\\
+&= 2*2 = \fbox{4}
+\end{align*}
+
+\end{document}
+
+

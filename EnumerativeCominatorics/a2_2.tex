@@ -1,0 +1,41 @@
+
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,amsthm,amssymb}
+\newcommand{\qbinom}{\genfrac{[}{]}{0pt}{}}
+\newcommand{\akseq}{\{a_k\}_{k\ge1}}
+\newcommand{\bkseq}{\{b_k\}_{k\ge1}}
+\newcommand{\ih}{Induction Hypothesis}
+
+\begin{document}
+
+We first show the existence. That is, for each postive integer $m$, $\exists \akseq$ such that $m=\sum_{k=1}^\infty a_kf_k$, with the given restrictions. Since $1=f_1$, the result holds for $m=1$. Suppose $m>1$ and such a representation exists for each $1\le r \le m$. Let $n$ be chosen so that $f_n\le m <f_{n+1}$. If $m=f_n$, then the result holds with 
+$$
+a_k= 
+\begin{cases}
+1,&k=n\\
+0,&k\neq n
+\end{cases}.
+$$
+Suppose $m>f_n$. Note that $1\le m-f_n< f_{n-1}$. By the \ih, $m-f_n=\sum_{k=1}^\infty b_kf_k$, with the desired restrictions on $\bkseq$. Since $m-f_n< f_{n-1}$, we have $b_k=0$ for $k\ge n-1$. Hence, if we let $a_k=
+\begin{cases}1,&k=n\\b_k,&k\neq n\end{cases}$, then we have a desired representation for $m$.\\
+\par
+For $n\ge0$, define $$g_n=
+\begin{cases}
+0,&n=0\\
+f_1,&n=1\\
+g_{n-2}+f_n,&n\ge2
+\end{cases}.
+$$
+We show that for each $n$, $g_{n+1}=f_{n+1}$. This is clear for $n<2$. Suppose $n\ge2$ so that for each $0\le m<n$, $g_m+1=f_{m+1}$. It holds that $g_n+1=g_{n-2}+1+f_n=f_{n-1}+f_n=f_{n+1}$.
+
+Suppose $\akseq$ is a sequence of 0's and 1's so that for all $k\ge1$, $\{a_k,a_{k+1}\}\neq\{1\}$, and there is some $r\ge0$ such that $a_r=1$ if $r>0$, and $a_k=0$ if $k>r$. Define $S(\akseq):=\sum_{k=0}^\infty a_kf_k$. I claim that $S(\akseq)\le g_r$. We proceed with induction on $r$. If $r=0$, then all $a_k$ are 0 and $S(\akseq)=0=g_0$. If $r=1$, then $S(\akseq)=f_1=g_1$. Fix some $r_0>1$ and assume $S(\akseq)\le g_r$ whenever $r<r_0$. Consider $r=r_0$. Define $b_k$ to be 0 if $k=r$ and $a_k$ otherwise. Since $a_{r-1}=0$, we have $b_k=0$ for each $k\ge r-1$. Thus, $S(\akseq)=S(\bkseq)+f_r\le g_{r-2}+f_r = g_r$.\\
+
+\par
+Lastly, we show that any positive integer $m$ can be written \textbf{uniquely} in the given form. It is clear that $1=f_1$ gives the unique representation for 1. Let $m>1$ and assume desired representations are unique for each $t=1,2,\hdots,m-1$. Suppose $m=S(\akseq)=S(\bkseq)$ with the desired restrictions for $\akseq,\bkseq$. Let $p,q\ge1$ be chosen so that $1=a_p=b_q$, $a_k=0$ for $k>p$, and $b_k=0$ for $k>q$. Assume wlog that $p\le q$. If follows that $m-f_p=\sum_{k=1}^{p-1}a_kf_k=\sum_{k=1}^{p-1}b_kf_k$. By the \ih, $a_k=b_k$ for $k<p$, and hence, $a_k=b_k$ for all $k$, proving the uniqueness. \qed
+
+
+
+\end{document}
+
+
