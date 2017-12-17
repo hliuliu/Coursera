@@ -13,7 +13,11 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
+h = X * theta; % (m x n+1) * (n+1 x 1) ==> (m x 1)
 
+J = (h-y).^ 2;
+
+J = sum(J)/ (2*m);
 
 
 

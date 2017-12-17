@@ -17,8 +17,11 @@ for iter = 1:num_iters
     %       of the cost function (computeCost) and gradient here.
     %
 
-
-
+    h = X * theta; % (m x n+1) * (n+1 x 1) ==> (m x 1)
+    
+    Jderiv = X' * (h-y) / m;
+    
+    theta = theta - alpha* Jderiv;
 
 
 
