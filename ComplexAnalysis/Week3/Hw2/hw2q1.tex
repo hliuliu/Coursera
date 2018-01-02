@@ -8,6 +8,7 @@
 \newcommand{\R}{\mathbb{R}}
 \renewcommand{\Im}{\text{Im}}
 \renewcommand{\Re}{\text{Re}}
+\newcommand{\ol}{\overline}
 
 \begin{document}
 
@@ -21,10 +22,34 @@ Find the image of the set $U=\{z\in \C:-{\pi\over 2}<\Re z<{\pi\over 2}\}$ under
 
 Notice that the real function, $\sin x$, is continuous and increasing on $L_1$, with $\sin (-{\pi\over 2}) = -1$ and $\sin ({\pi\over 2}) = 1$. Thus, $f(L_1)=(-1,1)$.
 
-\item What is the image of the imaginary axis $L_2=\{iy:y\in\R\}$ under $f$?
-\item What is the image of the vertical line $L_3=\{-{\pi\over2}+iy:y\in\R\}$ under $f$?
-\item What is the image of the vertical line $L_4=\{{\pi\over2}+iy:y\in\R\}$ under $f$?
-\item Given your above observations, what do you guess the image of the set $U$ is under $f$?
+\item What is the image of the imaginary axis $L_2=\{iy:y\in\R\}$ under $f$?\\
+
+We know that $\sin (iy)= {e^{-y}-e^y \over 2i}$. For each $y\in\R$, we have that $\sin (iy)\in i\R:=\{ia:a\in\R\}$. Consider $g(y) = e^{-y}-e^y$. Note that $g$ is continuous on $\R$. Also,
+$$\lim_{y\to\infty}g(y)=-\infty$$ and $$\lim_{y\to-\infty}g(y)=\infty$$
+so $g(\R)=\R$ by the intermediate value theorem (IVT). Hence, $\sin (iy)=2i g(y)$, so $f(L_2)=L_2$, the imaginary axis itself.
+
+\item What is the image of the vertical line $L_3=\{-{\pi\over2}+iy:y\in\R\}$ under $f$?\\
+
+First, observe that for $y\in\R$,
+\begin{align*}
+\sin (iy-{\pi\over 2}) &= \sin(iy)\cos(-{\pi\over2})+\cos(iy)\sin (-{\pi\over 2})\\
+&=-\cos(iy)\\
+&={-e^{-y}-e^y\over 2}.
+\end{align*}
+
+Let $h(y)= e^{-y}+e^{y}$. Then $h'(y)= -e^{-y}+e^y$ and $h''(y)=h(y)>0$. Thus, $h'$ is strictly increasing on $\R$ and hence, has at most one zero. Also, $h'(0)=0$. We conclude that $h$ is strictly decreasing on $(-\infty,0)$, achieves a global minimum of $2$ at $0$, and is strictly increasing on $(0,\infty)$. Note that $h$ is unbounded above as $\lim_{y\to\infty}h(y)=\infty$. Hence, $h(\R)=[2,\infty)$. Since $\sin(iy-{\pi\over2})=-{1\over 2}h(y)$, we have $f(L_3)=(-\infty,-1]$.
+
+\item What is the image of the vertical line $L_4=\{{\pi\over2}+iy:y\in\R\}$ under $f$?\\
+
+Computing $f(L_4)$ involves an argument similar to that for computing $f(L_3)$. We find that $\sin(iy+{\pi\over2})=\cos(iy)$ and conclude that $f(L_4)=[1,\infty)$.
+
+\item Given your above observations, what do you guess the image of the set $U$ is under $f$?\\
+
+I believe it should be $\C-f(L_3)-f(L_4)$, which is $$\C-\{z\in\C: \Im z = 0, |z|\ge1\}.$$
+
+This claim indeed makes sense.
+We know that $f$ is entire, so $f(\C)=\C$. Given $S\subseteq\C$, let $\ol{S}$ denote the closure of $S$, which is $S$, together with its boundary points. As with the situation in $\R$, $f(\ol{L_1})=f(\R)$. We can somehow view $U$ as a analogue of $L_1$ for $\C$, and  guess that $f(\ol{U})=f(\C)=\C$. Notice that $U=\ol{U}-L_3-L_4$, which is what guided my intuition to the above answer for $f(U)$.
+
 \end{enumerate}
 
 \end{document}

@@ -1,0 +1,54 @@
+
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\Im}{\text{Im}}
+\renewcommand{\Re}{\text{Re}}
+\newcommand{\ol}{\overline}
+
+\begin{document}
+
+\title{Hw. 2 Problem 2}
+\maketitle
+
+Let $u(x,y)=x^2-y^2-y$. Find a real-valued function $v(x,y)$ such that $v(0,0)=1$ and together, $u$ and $v$ satisfy the Cauchy-Riemann equations in the entire complex plane.
+
+
+\begin{enumerate}
+\item Find partial derivatives $u_x(x,y)$ and $u_y(x,y)$.\\
+\begin{align*}
+u_x(x,y) &= 2x\\
+u_y(x,y) &= -2y-1
+\end{align*}
+
+\item Using these partial derivatives and the Cauchy-Riemann equations, give equations for the partial derivatives $v_x(x,y)$ and $v_y(x,y)$.\\
+\begin{align*}
+v_x&=-u_y=2y+1\\
+v_y&=u_x=2x
+\end{align*}
+
+\item Find functions $v(x,y)$ that satisfy the equation for the partial derivative with respect to $x$.\\
+
+$v(x,y)=\int v_x dx = \int 2y+1\ dx = 2xy+x+g(y)$, where $g(y)$ is independent of $x$.
+
+\item Find functions $v(x,y)$ that satisfy the equation for the partial derivative with respect to $y$.\\
+
+$v(x,y)=\int v_y dy = \int 2x\ dy = 2xy+h(x)$, where $h(x)$ is independent of $y$.
+
+\item Now find a function $v(x,y)$ that satisfies both equations for the partial derivatives at the same time.\\
+
+We have $v(x,y)=2xy+h(x)=2xy+x+g(y)$, so $h(x)=x+g(y)$. Thus, $g(y)=c$ in a constant. Hence, 
+$$v(x,y)=2xy+x+c, c\in \C.$$
+
+\item Finally, check whether the function you found in the previous step satisfies $v(0,0)=1$. If not, modify the function so that it does.\\
+
+We want $1=v(0,0)=0+0+c$, giving $c=1$. The desired function is hence, $2xy+x+1$.
+
+\end{enumerate}
+
+
+\end{document}
