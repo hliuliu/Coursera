@@ -21,6 +21,19 @@ p = zeros(size(X, 1), 1);
 %       can use max(A, [], 2) to obtain the max for each row.
 %
 
+g = @sigmoid;
+
+X = [ones(m,1) X];
+
+for i=1:m,
+  a = X(i,:)';
+  z = Theta1*(a);
+  a = [1; g(z)];
+  z = Theta2*(a);
+  a = g(z);
+  [_,p(i)] = max(a);
+end
+
 
 
 

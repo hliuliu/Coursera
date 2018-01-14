@@ -30,8 +30,10 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
+% no need for the sigmoid function here. It is strictly increasing anyways
+h = X*all_theta';
 
-
+[_,p] = max(h, [], 2);
 
 
 
