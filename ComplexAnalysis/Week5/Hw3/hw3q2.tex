@@ -1,0 +1,27 @@
+
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\renewcommand{\Im}{\text{Im}}
+\renewcommand{\Re}{\text{Re}}
+\newcommand{\ol}{\overline}
+
+\begin{document}
+
+\title{Hw. 3 Problem 2}
+\maketitle
+
+Let $f(z)=\sin⁡ z$ and consider the domain 
+$$D=\{z\in \C :0<\Re  z<\pi,0<\Im z<1\}$$ (an open rectangle). Find the maximum of $|f(z)|$ on $\ol{D}(=D\cup \partial D)$ as well as the $z$-value(s) at which $|f|$ attains this maximum value.\\\\
+
+Let $g(z):=|f(z)|^2$ with $z=x+iy$. Then $g(z)= \cos^2(x)\cosh^2(y)+\sin^2(x)\sinh(y)-\cos^2(x)\sinh^2(y)+\cos^2(x)\sinh^2(y)= \cos^2(x)+\sinh^2(y)$.
+
+Notice that $\sinh(y)\ge0$ is strictly increasing on $(0,1)$. Thus, $g$ is nonconstant on $D$, so $f$ is nonconstant on $D$. By the maximal principle, the maximum of $|f|$ over $\ol{D}$ must occur on 
+$\partial{D}$. For each $x\in\R$, $g(x+i)>g(x)$. Thus, $|f(z)|$ can be maximum only if $\Im z = 1$. We know that $\cos^2(x)\in [0,1]$ for all $x\in\R$. Also, $\cos^2(x)=1$ if and only if $x=n\pi$ with $n\in\Z$. We hence have that the maximum of $|f(z)|$ on $\ol{D}$ occurs at $z=i$ and $z=\pi+i$. This value is $\sqrt{1+\sinh^2(1)}=\sqrt{1+{1\over 4}(e-{1\over e})^2}$.
+
+\end{document}
