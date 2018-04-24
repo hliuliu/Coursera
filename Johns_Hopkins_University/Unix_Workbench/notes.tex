@@ -1,0 +1,78 @@
+
+
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,amssymb,amssymb,graphicx}
+\usepackage{indentfirst,textcomp}
+
+\newcommand{\code}[1]{
+\texttt{#1}
+}
+
+\begin{document}
+	\title{Unix Workbench Notes}
+	\author{Haggai Liu}
+	\maketitle	
+	
+	\section{Unix and Command Line Basics}
+		
+		\subsection{What Is Unix?}
+		 Unix is an operating system and a set of tools. one particular tool is known a a \textbf{shell}, which is a computer program that provides a command line interface. Using the command line interface lets you enter lines of code into a shell (also called a console) and that code instructs your computer to perform a specific task. The terms \textbf{command line}, \textbf{shell}, and \textbf{console}, are often used interchangeably.\\
+		 
+		 The shell is a very direct and powerful way to manipulate a computer. We can produce wonderful creations that help thousands of people, or we can wreak havoc on ourselves and on others.\\
+		 
+		 There are several popular shell programs but Bash is the default shell program on Mac and Ubuntu.
+		 
+		 \subsection{Getting Unix}
+		 Mac and Ubuntu users can simply open up the Terminal. Windows 10 users can enable and install Bash on Ubuntu on Windows. Users of earlier Windows versions can use VirtualBox.
+		 
+		 \subsection{Command Line Basics}
+		 
+		 \subsubsection{Hello Terminal!}
+		 Once we fire up a Terminal there will be a prompt like the following:\\
+		 \code{<machine-id>:$\sim$<user>\$}\\
+		 
+		 Commands are typed right after the prompt. Enter is pressed after the command to execute it. If no command is typed before pressing enter, nothing happens and a new prompt appears directly below the old prompt. All those prompts appearing on the screen after several enter presses may begin to look messy. Those prompts can be cleared using the \code{clear} command.\\
+		 
+		 Every command line command is actually a little computer program, even commands as simple as clear. These commands all tend to have the following structure:\\
+		 \code{[command] [options] [arguments]}\\
+		 
+		 Some simple commands like clear don't require any options or arguments. Options are usually preceded by a hyphen (-) and they tweak the behaviour of the command. Arguments can be names of files, raw data, or other options that the command requires. A simple command that has an argument is echo. The echo command prints a phrase to the console. An example is given below. Surround the message with single or double quotes.
+		 
+		 \begin{verbatim}
+		 :~$ echo "Hello World"
+		 Hello World
+		 :~$
+		 \end{verbatim}
+		 
+		 To see the last command press the Up arrow key. We can press Up and Down in order to scroll through the history of commands that were entered. If we want to re-execute a past command, we can scroll to that command then press Enter. \\
+		 
+		 \textbf{Summary:}
+		 \begin{itemize}
+		 \item Commands are typed after the prompt.
+		 \item \code{clear} cleans up the terminal screen.
+		 \item \code{echo} prints text to the terminal.
+		 \item Can scroll command history via Up and Down arrows.
+		 \end{itemize}
+		 
+		 \textbf{Exercises:}
+		 
+		 \begin{enumerate}
+		 \item Print you name to the console.\\\\
+		 \code{echo "Haggai Liu"}
+		 \\
+		 \item Clear your terminal after that.\\\\
+		 \code{clear}\\
+		 \end{enumerate}
+	
+	\section{Working with Unix}
+	
+	
+	\section{Bash Programming}
+	
+	
+	\section{Git and GitHub}
+	
+\end{document}
+
+
