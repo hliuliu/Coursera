@@ -64,6 +64,78 @@
 		 \item Clear your terminal after that.\\\\
 		 \code{clear}\\
 		 \end{enumerate}
+		 
+		 \subsubsection{Navigating the Command Line}
+		 
+		 We now discuss how files and folders are organized on the computer.\\
+		 
+		 Computers are organized in a hierarchy of folders, where a folder can contain many folders and files. People who use Unix often refer to folders as directories and these terms are interchangeable. This directory hierarchy forms a tree. The command line can be used to navigate these trees on your computer.
+		 
+		 There are a few special directories that we should take note of. The directory at the top of the tree is called the root directory. The root directory contains all other directories, and is represented by a slash (/).\\
+		 
+		 The home directory is another special directory that is represented by a tilde (\textasciitilde). The home directory contains personal files, like photos, documents, and the contents of the desktop. When we first open up the shell we usually start off in the home directory. Imagine tracing all of the directories from your root directory to the current working directory. This sequence of directories is called a path. Below gives an example of the path from a hypothetical root directory to the home directory.\\\\
+		 \code{/home/hliu}\\
+		 
+		  Whatever directory the shell is in is called the working directory. The \code{pwd} command prints the working directory. The working directory can be changed via the \code{cd} command. Using it without arguments changes the working directory to the home directory. \\
+		  
+		  To change the working directory to a directory other than the home directory, we need to provide \code{cd} with the path to another directory as an argument. We can specify a path as either a path that is relative to your current directory, or you can specify the absolute path to a directory starting from the root of your computer. If we simply want to change the working directory to one of the folders that is inside our home directory, then first we need to be able to see which folders are in our working directory. We can list the files and folders in a directory using the \code{ls} command.
+		  
+		  \textbf{Exercise:}
+		  
+		  \begin{enumerate}
+		  \item Set your working directory to the root directory.
+		  \begin{verbatim}
+		  cd /
+		  \end{verbatim}
+		  
+		  \item Set your working directory to your home directory using three different commands.
+		  
+		  \begin{verbatim}
+		  cd
+		  cd ~
+		  cd /home/hliu/
+		  # can also use relative paths as appropriate
+		  \end{verbatim}
+		  
+		  \item Find a folder on your computer using your file and folder browser, and then set your working directory to that folder using the terminal.
+		  \begin{verbatim}
+		  cd /abs/path/to/desired/folder
+		  \end{verbatim}
+		  
+		  \item List all of the files and folders in the directory you navigated to in 3.
+		  \begin{verbatim}
+		  ls
+		  \end{verbatim}
+		  \end{enumerate}
+		  
+		  \subsubsection{Creation with Inspection}
+		  \begin{itemize}
+		  \item \code{mkdir} command
+		  	\begin{itemize}
+		  		\item Creates a new directory.
+		  		\item Takes, as argument, the path of the directory
+		  	\end{itemize}
+		  	
+		  \item \code{touch} command
+		  	\begin{itemize}
+		  		\item Creates a new blank file
+		  		\item Takes the name of the new file as an argument
+		  		
+		  	\end{itemize}
+		  	
+		  	\item \code{ls} command alone does not differentiate between files and folders
+		  	\item Need to run \code{ls} with the \code{-l} option to get a long listing of files in a directory.
+		  	\begin{itemize}
+		  		\item one line per file
+		  		\item Each line begins with a string of 10 characters, each of which is a letter or a dash.
+		  		\item If first character is \code{d}, then it's a directory. Otherwise it's an ordinary file.
+		  		
+		  		\item The other 9 characters represent permissions.
+		  	\end{itemize}
+		  	
+		  	
+		  	
+		  \end{itemize}
 	
 	\section{Working with Unix}
 	
